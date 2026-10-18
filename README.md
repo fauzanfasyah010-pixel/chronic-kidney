@@ -55,9 +55,15 @@ Proyek ini juga menyediakan **REST API** yang dibangun menggunakan **FastAPI** u
 - **Validasi Input Otomatis**: Menggunakan **Pydantic** untuk memvalidasi data yang masuk, memastikan tipe data dan format sesuai dengan yang diharapkan model.
 - **Dokumentasi Interaktif**: FastAPI secara otomatis menghasilkan dokumentasi API yang dapat diakses melalui Swagger UI.
 
+app.py (Streamlit Web)
+cara menjalankan: streamlit run app.py
+
+main.py (FastAPI REST API) 
+cara menjalankan: uvicorn main:app --reload
+
 ### Cara Menjalankan API:
 
-1. **Install Dependensi:**
+ **Install Dependensi:**
    ```bash
    pip install fastapi uvicorn pandas scikit-learn joblib pydantic
 
@@ -70,6 +76,7 @@ ckd-risk-prediction/
 ├── logistic_regression_ckd.joblib    # Model Logistic Regression tersimpan
 ├── hgb_classifier_ckd.joblib         # Model Hist Gradient Boosting tersimpan
 ├── scaler_ckd.joblib                 # Scaler untuk preprocessing data baru
-── ckd_deployment_bundle.joblib      # Bundle model lengkap untuk deployment (API)
-── main.py                           # FastAPI server untuk REST API prediksi
+── ckd_deployment_bundle.joblib       # Bundle model lengkap untuk deployment (API)
+── main.py                            # FastAPI server untuk REST API prediksi
+── app.py                             # Streamlit website untuk prediksi
 └── README.md                         # Dokumentasi proyek

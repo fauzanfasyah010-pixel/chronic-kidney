@@ -1,17 +1,17 @@
 # 🩺 Chronic Kidney Disease (CKD) Risk Prediction
 
-## 📌 Deskripsi Proyek
+##  Deskripsi Proyek
 Proyek ini bertujuan untuk melakukan analisis data kesehatan dan membangun model *Machine Learning* untuk memprediksi tingkat risiko penyakit ginjal kronis (*Chronic Kidney Disease* / CKD) berdasarkan fitur klinis, demografi, dan gaya hidup pasien. 
 
 Target prediksi dibagi menjadi tiga kategori risiko: **Low (Rendah)**, **Moderate (Sedang)**, dan **High (Tinggi)**. Proyek ini menerapkan pipeline *machine learning* yang ketat dengan fokus pada pencegahan *data leakage* dan penanganan *class imbalance*.
 
-## 🧠 Algoritma yang Digunakan
+##  Algoritma yang Digunakan
 Tiga algoritma klasifikasi diimplementasikan dan dibandingkan dalam proyek ini:
 1. **Random Forest Classifier**: Model utama yang menggunakan ensemble *decision trees* dengan regularisasi ketat (`max_depth`, `min_samples_split`) untuk mencegah *overfitting*.
 2. **Logistic Regression**: Digunakan sebagai model *baseline* linier untuk membandingkan performa klasifikasi dasar.
 3. **Hist Gradient Boosting Classifier**: Algoritma *boosting* yang efisien dan cepat, sangat cocok untuk dataset berukuran besar dengan fitur kategorikal dan numerik campuran.
 
-## 📊 Dataset
+## Dataset
 Dataset yang digunakan adalah **Chronic Kidney Disease Risk Prediction Dataset** (bersumber dari Kaggle).
 - **Ukuran Data:** ±50.000 baris dan 40 kolom (sebelum *cleaning*).
 - **Target Prediksi:** `CKD_Risk` (Kategori: Low, Moderate, High).
@@ -20,7 +20,7 @@ Dataset yang digunakan adalah **Chronic Kidney Disease Risk Prediction Dataset**
 > **Catatan Penting (Target Leakage Prevention):** 
 > Kolom seperti `Patient_ID`, `CKD_Risk_Score`, `AI_Health_Recommendation`, dan `Doctor_Consultation_Needed` **sengaja dihapus** sebelum pemodelan. Kolom-kolom tersebut merupakan turunan langsung dari target dan akan menyebabkan *data leakage* (model "menyontek") jika ikut dilatih.
 
-## 🛠️ Tahapan Pengerjaan
+##  Tahapan Pengerjaan
 1. **Import Library & Data Loading:** Memuat dataset menggunakan Pandas.
 2. **Data Cleaning:** Menghapus kolom identitas dan kolom "penyontek" (*leakage*), serta menangani *missing values*.
 3. **Exploratory Data Analysis (EDA):** Visualisasi distribusi data mentah dan matriks korelasi fitur numerik.
@@ -34,16 +34,32 @@ Dataset yang digunakan adalah **Chronic Kidney Disease Risk Prediction Dataset**
 8. **Evaluation & Comparison:** Mengevaluasi performa dan membandingkan metrik antar model menggunakan *Classification Report* dan *Confusion Matrix*.
 9. **Model Saving:** Menyimpan model terbaik dan *scaler* menggunakan `joblib`.
 
-## 📈 Evaluasi Model
+##  Evaluasi Model
 Metrik evaluasi yang digunakan untuk membandingkan performa model:
 - **Accuracy:** Proporsi prediksi benar secara keseluruhan.
 - **Precision, Recall, & F1-Score (Macro):** Metrik utama untuk menilai performa model, terutama karena dataset memiliki ketidakseimbangan kelas (*class imbalance*) pada kategori 'Low'.
 - **Confusion Matrix:** Memvisualisasikan detail kesalahan klasifikasi antar kategori untuk setiap model.
 
-## 🌟 Highlight & Challenges Solved
-- 🛡️ **Anti-Data Leakage:** Memastikan parameter *imputasi* dan *scaling* hanya dipelajari dari data latih (*training*), mencegah informasi data uji bocor ke model.
-- ⚖️ **Class Imbalance Handling:** Menggunakan `class_weight='balanced'` pada Random Forest agar model tidak bias terhadap kelas mayoritas ('High') dan tetap peduli pada kelas minoritas ('Low').
-- 🚧 **Overfitting Prevention:** Menerapkan *hyperparameter tuning* (`max_depth`, `min_samples_split`, `min_samples_leaf`) pada Random Forest untuk menghentikan model "menghafal" data latih, sehingga akurasi *training* dan *testing* menjadi seimbang (generalization).
+##  Highlight & Challenges Solved
+-  **Anti-Data Leakage:** Memastikan parameter *imputasi* dan *scaling* hanya dipelajari dari data latih (*training*), mencegah informasi data uji bocor ke model.
+-  **Class Imbalance Handling:** Menggunakan `class_weight='balanced'` pada Random Forest agar model tidak bias terhadap kelas mayoritas ('High') dan tetap peduli pada kelas minoritas ('Low').
+-  **Overfitting Prevention:** Menerapkan *hyperparameter tuning* (`max_depth`, `min_samples_split`, `min_samples_leaf`) pada Random Forest untuk menghentikan model "menghafal" data latih, sehingga akurasi *training* dan *testing* menjadi seimbang (generalization).
+
+  #  Deployment: REST API dengan FastAPI
+
+Proyek ini juga menyediakan **REST API** yang dibangun menggunakan **FastAPI** untuk melayani prediksi risiko CKD secara *real-time*. API ini memungkinkan aplikasi lain (web, mobile, atau sistem informasi rumah sakit) untuk berintegrasi dengan model *machine learning* yang telah dilatih.
+
+### Fitur API:
+- **Endpoint `/predict`**: Menerima data pasien dalam format JSON dan mengembalikan prediksi risiko CKD beserta *confidence score* untuk setiap kategori (Low, Moderate, High).
+- **Endpoint `/`**: *Health check* untuk memastikan API berjalan dengan baik.
+- **Validasi Input Otomatis**: Menggunakan **Pydantic** untuk memvalidasi data yang masuk, memastikan tipe data dan format sesuai dengan yang diharapkan model.
+- **Dokumentasi Interaktif**: FastAPI secara otomatis menghasilkan dokumentasi API yang dapat diakses melalui Swagger UI.
+
+### Cara Menjalankan API:
+
+1. **Install Dependensi:**
+   ```bash
+   pip install fastapi uvicorn pandas scikit-learn joblib pydantic
 
 ## 📂 Struktur Repository
 ```text
@@ -54,4 +70,12 @@ ckd-risk-prediction/
 ├── logistic_regression_ckd.joblib    # Model Logistic Regression tersimpan
 ├── hgb_classifier_ckd.joblib         # Model Hist Gradient Boosting tersimpan
 ├── scaler_ckd.joblib                 # Scaler untuk preprocessing data baru
+── ckd_deployment_bundle.joblib      # Bundle model lengkap untuk deployment (API)
+── main.py                           # FastAPI server untuk REST API prediksi
 └── README.md                         # Dokumentasi proyek
+
+### 💡 Yang Ditambahkan:
+1. **Bagian "🚀 Deployment: REST API dengan FastAPI"** - Penjelasan lengkap tentang `main.py` dan fungsinya.
+2. **Cara Menjalankan API** - Langkah-langkah instalasi dan menjalankan server FastAPI.
+3. **Contoh Penggunaan API** - Format request dan response JSON untuk endpoint `/predict`.
+4. **Update Struktur Repository** - Menambahkan `main.py` dan `ckd_deployment_bundle.joblib` ke dalam struktur folder.

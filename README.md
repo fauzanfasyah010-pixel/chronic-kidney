@@ -73,9 +73,3 @@ ckd-risk-prediction/
 ── ckd_deployment_bundle.joblib      # Bundle model lengkap untuk deployment (API)
 ── main.py                           # FastAPI server untuk REST API prediksi
 └── README.md                         # Dokumentasi proyek
-
-### 💡 Yang Ditambahkan:
-1. **Bagian "🚀 Deployment: REST API dengan FastAPI"** - Penjelasan lengkap tentang `main.py` dan fungsinya.
-2. **Cara Menjalankan API** - Langkah-langkah instalasi dan menjalankan server FastAPI.
-3. **Contoh Penggunaan API** - Format request dan response JSON untuk endpoint `/predict`.
-4. **Update Struktur Repository** - Menambahkan `main.py` dan `ckd_deployment_bundle.joblib` ke dalam struktur folder.

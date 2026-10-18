@@ -1,0 +1,4 @@
+timestamp,prediction,Age,Gender,Country,Height_cm,Weight_kg,BMI,Blood_Pressure_Systolic,Blood_Pressure_Diastolic,Blood_Glucose,Serum_Creatinine,Blood_Urea,eGFR,Albumin,Hemoglobin,Sodium,Potassium,Heart_Rate,Smoking_Status,Alcohol_Consumption,Physical_Activity_Level,Exercise_Hours_Per_Week,Daily_Water_Intake_L,Daily_Salt_Intake,Sleep_Hours,Stress_Level,Diet_Quality,Family_History_CKD,Diabetes,Hypertension,Heart_Disease,Kidney_Stone_History,Medication_Adherence,Work_Type,Residence_Type,Air_Pollution_Exposure
+2026-10-18T12:08:19,Moderate,0.0,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.0,,,,0.06,0.0,,0.0,,,,,,,,,,,
+2026-10-18T12:08:23,Moderate,0.0,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.0,,,,0.06,0.0,,0.0,,,,,,,,,,,
+2026-10-18T12:10:27,Moderate,0.04,trans,indog,0.06,0.04,0.04,0.08,0.04,0.07,0.1,0.0,0.18,0.07,0.14,0.1,0.05,0.0,never,never,good,0.06,0.04,5 g,0.06,high,i dont know,none,none,none,none,none,none,pyhsical,none,none

@@ -2,9 +2,9 @@
 
 ## Pendahuluan
 
-Pada tugas ini dilakukan pencarian dan identifikasi terhadap 9 dataset yang berasal dari Kaggle. Dataset dikelompokkan menjadi tiga jenis, yaitu Binary Classification, Multiclass Classification, dan Multilabel Classification.
+dilakukan pencarian dan identifikasi terhadap 9 dataset dari Kaggle. Dataset dikelompokkan menjadi tiga jenis, Binary Classification, Multiclass Classification, dan Multilabel Classification.
 
-Tujuan identifikasi ini adalah mengetahui apakah suatu dataset termasuk permasalahan klasifikasi atau regresi, kemudian menentukan jenis klasifikasi berdasarkan karakteristik target atau label yang dimiliki.
+Tujuan identifikasi ini adalah menentukan jenis klasifikasi berdasarkan karakteristik target atau label yang dimiliki.
 
 ---
 

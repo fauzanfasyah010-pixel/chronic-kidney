@@ -45,7 +45,7 @@ Kumpulan notebook latihan **Machine Learning** menggunakan algoritma **Support V
 
 ---
 
-## 📓 Penjelasan Notebook
+## Penjelasan Notebook
 
 ### 1️⃣ Indian diebetes Klasification.ipynb — Klasifikasi Diabetes (SVC)
 Alur pengerjaan:

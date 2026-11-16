@@ -1,6 +1,6 @@
-# 🤖 Support Vector Machine (SVM) — Klasifikasi & Regresi
+#  Support Vector Machine (SVM) — Klasifikasi & Regresi
 
-Kumpulan notebook latihan **Machine Learning** menggunakan algoritma **Support Vector Machine (SVM)** dengan library **scikit-learn**. Proyek ini mencakup tiga topik:
+Kumpulan notebook latihan **Machine Learning** menggunakan algoritma **Support Vector Machine (SVM)** dengan library **scikit-learn**.
 
 1. **Klasifikasi** — Prediksi penyakit diabetes menggunakan `SVC`
 2. **Regresi** — Prediksi gaji berdasarkan pengalaman kerja menggunakan `SVR`
@@ -17,12 +17,6 @@ Kumpulan notebook latihan **Machine Learning** menggunakan algoritma **Support V
 ├── Latihan SVM Sklearn.ipynb             # Latihan SVM linear kernel (scikit-learn)
 ├── Latihan SVM py .ipynb                 # Latihan SVM: hyperplane & margin manual
 └── README.md
-```
-
-> ⚠️ Notebook regresi membutuhkan file `Salary_Data.csv` (YearsExperience, Salary).
-> Pastikan file tersebut berada satu folder dengan notebook sebelum dijalankan.
-
----
 
 ## 📊 Dataset
 
@@ -80,7 +74,7 @@ memvisualisasikan kemampuan SVR menangkap pola non-linear, bukan evaluasi genera
 - Menghitung garis batas keputusan: `x2 = -(w1·x1 + b) / w2`
 - Memvisualisasikan titik data (biru = lulus, merah = tidak lulus) beserta garis pemisahnya
 
-### 4️⃣ Latihan SVM py .ipynb — Hyperplane & Margin Manual
+###  Latihan SVM py .ipynb — Hyperplane & Margin Manual
 - Menggunakan dataset latihan yang sama, tetapi hyperplane **didefinisikan manual**:
   - Hyperplane: `x2 = -x1 + 8.5`
   - Margin positif: `x2 = -x1 + 9`
@@ -90,7 +84,7 @@ memvisualisasikan kemampuan SVR menangkap pola non-linear, bukan evaluasi genera
 
 ---
 
-## 📈 Ringkasan Hasil
+## Ringkasan Hasil
 
 | Model | Dataset | Konfigurasi | Hasil |
 |---|---|---|---|
@@ -100,7 +94,7 @@ memvisualisasikan kemampuan SVR menangkap pola non-linear, bukan evaluasi genera
 
 ---
 
-## 🛠️ Teknologi
+## Teknologi
 
 - Python 3.12
 - pandas
@@ -109,7 +103,7 @@ memvisualisasikan kemampuan SVR menangkap pola non-linear, bukan evaluasi genera
 - matplotlib
 - Jupyter Notebook
 
-## 🚀 Cara Menjalankan
+## Cara Menjalankan
 
 ```bash
 # 1. Clone repository
@@ -132,7 +126,7 @@ Buka notebook yang diinginkan, lalu jalankan semua cell secara berurutan (**Run 
 
 ---
 
-## 💡 Poin Pembelajaran
+## Poin Pembelajaran
 
 - SVM mencari **hyperplane dengan margin terbesar** untuk memisahkan kelas.
 - **Kernel trick** (`rbf`) memungkinkan SVM menangani data yang tidak terpisah secara linear.
@@ -140,10 +134,3 @@ Buka notebook yang diinginkan, lalu jalankan semua cell secara berurutan (**Run 
 - Parameter `C` mengontrol trade-off antara margin lebar dan kesalahan klasifikasi;
   `gamma` mengontrol seberapa jauh pengaruh satu titik data (kernel RBF).
 - `SVC` untuk klasifikasi (label diskrit), `SVR` untuk regresi (nilai kontinu).
-
----
-
-## 👤 Author
-
-**[Nama Kamu]** — Mahasiswa [Jurusan/Kampus]
-📧 [email kamu]

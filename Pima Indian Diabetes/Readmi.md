@@ -105,27 +105,6 @@ memvisualisasikan kemampuan SVR menangkap pola non-linear, bukan evaluasi genera
 - matplotlib
 - Jupyter Notebook
 
-## Cara Menjalankan
-
-```bash
-# 1. Clone repository
-git clone https://github.com/<username>/<nama-repo>.git
-cd <nama-repo>
-
-# 2. (Opsional) buat virtual environment
-python -m venv venv
-venv\Scripts\activate        # Windows
-# source venv/bin/activate   # Linux/Mac
-
-# 3. Install dependencies
-pip install pandas numpy scikit-learn matplotlib jupyter
-
-# 4. Jalankan Jupyter
-jupyter notebook
-```
-
-Buka notebook yang diinginkan, lalu jalankan semua cell secara berurutan (**Run All**).
-
 ---
 
 ## Poin Pembelajaran
